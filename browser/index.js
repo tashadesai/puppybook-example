@@ -2,13 +2,17 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AllPuppies from './AllPuppies';
+import AllPuppiesContainer from './AllPuppiesContainer';
+import { Provider } from 'react-redux';
+import store from './store';
 
 ReactDOM.render(
-  <div className="container flexbox-container">
-    <div className="jumbotron">
-      <AllPuppies />
+  <Provider store={store} >
+    <div className="container flexbox-container">
+      <div className="jumbotron">
+        <AllPuppiesContainer />
+      </div>
     </div>
-  </div>,
+  </Provider>,
   document.getElementById('app')
 );
