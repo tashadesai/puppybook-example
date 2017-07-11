@@ -12,12 +12,13 @@ export default class AllPuppies extends React.Component {
     this.props.getAllPuppies(hardCodedData);
   }
 
-  render () {
+  render() {
     console.log(this.props);
     return (
       <div>
         <ul className="list-unstyled">
-          {this.props.allPuppies && this.props.allPuppies.map(puppy => {
+          {
+            this.props.allPuppies && this.props.allPuppies.map(puppy => {
             return (<li key={puppy.id}><a href="#">{puppy.name}</a></li>);
           })}
         </ul>
