@@ -25,11 +25,7 @@ class SinglePuppy extends Component {
 import { connect } from 'react-redux';
 import { getPuppy } from '../redux/singlePuppy-actions';
 
-const mapStateToProps = (state) => {
-  return {
-    chosenPuppy: state.chosenPuppy
-  };
-};
+const mapStateToProps = (state) => ({ chosenPuppy: state.chosenPuppy })
 
 const mapDispatchToProps = { getPuppy }
 
