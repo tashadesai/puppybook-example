@@ -6,7 +6,7 @@ Delivered by [Natasha Desai](https://github.com/tashadesai/), [Gabriel Rowe](htt
 
 ## Follow-on Notes from Day 2
 
-This repo finishes Puppybook, including a lot of code that we didn't get to in our live session. Specifically, take note of:
+This repo finishes Puppybook, including a lot of code that we didn't get to in our live session. Specifically, please note:
 
 - The Router written in index.js
 - The new ```GET_A_PUPPY``` case in the reducer
