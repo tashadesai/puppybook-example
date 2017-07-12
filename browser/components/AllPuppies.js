@@ -17,7 +17,12 @@ class AllPuppies extends React.Component {
             this.props.allPuppies && this.props.allPuppies.map(puppy => {
               return (
                 <li key={puppy.id}>
-                  <Link to={`/${puppy.id}`}>{puppy.name}</Link>
+                  <Link
+                    to={`/${puppy.id}`}
+                    onClick={() => this.props.getPuppy(puppy.id)}
+                  >
+                    {puppy.name}
+                  </Link>
                 </li>
               )
             })}
@@ -31,6 +36,7 @@ class AllPuppies extends React.Component {
 
 import { connect } from 'react-redux'
 import { getAllPuppies } from '../redux/allPuppies-actions'
+import { getPuppy } from '../redux/singlePuppy-actions'
 
 const mapStateToProps = (state) => {
   return { allPuppies: state.allPuppies }
@@ -40,6 +46,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getAllPuppies: () => {
       dispatch(getAllPuppies())
+    },
+    getPuppy: (puppyId) => {
+      dispatch(getPuppy(puppyId))
     }
   }
 }
@@ -47,7 +56,7 @@ const mapDispatchToProps = (dispatch) => {
 /*
 aka SUUUPER-shorthand:
 
-const mapDispatchtoProps = { getAllPuppies }
+const mapDispatchtoProps = { getAllPuppies, getPuppy }
 
 */
 

@@ -5,8 +5,10 @@ import React, { Component } from 'react';
 class SinglePuppy extends Component {
 
   componentDidMount() {
-    const puppyId = this.props.match.params.puppyId
-    this.props.getPuppy(puppyId);
+    if (!this.props.chosenPuppy.keys) {
+      const puppyId = this.props.match.params.puppyId
+      this.props.getPuppy(puppyId);
+    }
   }
 
   render() {
