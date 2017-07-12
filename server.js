@@ -43,7 +43,6 @@ app.get('/api/puppies/:id', function (req, res) {
 })
 
 app.use('*', (req, res, next) => {
-  console.log('path: ', path.join(__dirname, 'index.html'))
   res.sendFile(path.join(__dirname, 'index.html'))
 })
 
