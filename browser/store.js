@@ -1,4 +1,14 @@
-import {reducer} from './reducer';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux'
+import createLogger from 'redux-logger'
+import thunk from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension'
 
-export default createStore(reducer);
+import { reducer } from './reducer'
+
+export default createStore(
+  reducer,
+  composeWithDevTools(applyMiddleware(
+    thunk,
+    createLogger({ collapsed: true })
+  ))
+)
