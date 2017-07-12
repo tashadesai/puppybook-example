@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 class SinglePuppy extends Component {
 
   componentDidMount() {
+    //Note this check in the componentDidMount. Ask yourself: Why is it used here? Hint: When is it important for the SinglePuppy component to run getPuppy, and when it is not?
     if (!this.props.chosenPuppy.keys) {
       const puppyId = this.props.match.params.puppyId
       this.props.getPuppy(puppyId);
