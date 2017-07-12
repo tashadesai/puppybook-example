@@ -17,7 +17,7 @@ class AllPuppies extends React.Component {
             this.props.allPuppies && this.props.allPuppies.map(puppy => {
               return (
                 <li key={puppy.id}>
-                  <Link to={`/puppies/${puppy.id}`}>{puppy.name}</Link>
+                  <Link to={`/${puppy.id}`}>{puppy.name}</Link>
                 </li>
               )
             })}

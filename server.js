@@ -42,9 +42,10 @@ app.get('/api/puppies/:id', function (req, res) {
   else res.json(aPuppy)
 })
 
-// app.use('*', (req, res, next) =>
-//   res.sendFile(path.join(__dirname, 'index.html'))
-// );
+app.use('*', (req, res, next) => {
+  console.log('path: ', path.join(__dirname, 'index.html'))
+  res.sendFile(path.join(__dirname, 'index.html'))
+})
 
 app.listen(3000, function () {
   console.log('Server listening on port', 3000)

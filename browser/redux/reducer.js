@@ -1,5 +1,5 @@
-import { getPuppies, GET_PUPPIES } from './allPuppies-actions'
-import { selectPuppy, GET_A_PUPPY } from './singlePuppy-actions'
+import { GET_PUPPIES } from './allPuppies-actions'
+import { GET_A_PUPPY } from './singlePuppy-actions'
 
 const initialState = {
   allPuppies: [],

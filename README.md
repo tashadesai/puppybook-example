@@ -8,5 +8,6 @@ Delivered by [Natasha Desai](https://github.com/tashadesai/), [Gabriel Rowe](htt
 
 This repo finishes Puppybook, including a lot of code that we didn't get to in our live session. Specifically, take note of:
 
-- Link used in the AllPuppies component
+- The Router written in index.js
+- The new ```GET_A_PUPPY``` case in the reducer
 -
