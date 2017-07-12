@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 
 class AllPuppies extends React.Component {
 
+  //Bonus: How could we "fill the store" with puppies WITHOUT using a componentDidMount on this component? Where else could we call getPuppies()?
   componentDidMount() {
     this.props.getAllPuppies()
   }
@@ -41,6 +42,13 @@ import { getPuppy } from '../redux/singlePuppy-actions'
 const mapStateToProps = (state) => {
   return { allPuppies: state.allPuppies }
 }
+
+/*
+aka SUUUPER-shorthand:
+
+const mapStateToProps = (state) => ({ allPuppies: state.allPuppies })
+
+*/
 
 const mapDispatchToProps = (dispatch) => {
   return {
