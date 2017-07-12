@@ -6,7 +6,6 @@ class SinglePuppy extends Component {
 
   componentDidMount() {
     const puppyId = this.props.match.params.puppyId
-    console.log("this.props.match", this.props.match)
     this.props.getPuppy(puppyId);
   }
 
