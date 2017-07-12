@@ -13,7 +13,6 @@ export default class AllPuppies extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div>
         <ul className="list-unstyled">
