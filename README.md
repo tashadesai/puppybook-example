@@ -10,4 +10,5 @@ This repo finishes Puppybook, including a lot of code that we didn't get to in o
 
 - The Router written in index.js
 - The new ```GET_A_PUPPY``` case in the reducer
--
+- Lines 45-47 of server.js. The server now sends index.html for any routes that don't match (i.e. requests for 'localhost:3000/1')
+
