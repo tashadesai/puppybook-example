@@ -4,10 +4,10 @@ export const GET_A_PUPPY = 'GET_A_PUPPY';
 
 /* ----- ACTION CREATORS ----- */
 
-export const getPuppies = puppies => {
+export const selectPuppy = puppy => {
   return {
     type: GET_A_PUPPY,
-    allPuppies: puppies
+    chosenPuppy: puppy
   };
 };
 
@@ -19,8 +19,8 @@ export const getPuppy = (puppyId) => {
   return (dispatch) => {
     axios.get(`/api/puppies/${puppyId}`)
       .then(res => res.data)
-      .then(puppies => {
-        dispatch(getPuppies(puppies))
+      .then(chosenPuppy => {
+        dispatch(selectPuppy(chosenPuppy))
       })
       .catch(console.error)
   }

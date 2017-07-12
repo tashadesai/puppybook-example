@@ -5,22 +5,17 @@ import React, { Component } from 'react';
 class SinglePuppy extends Component {
 
   componentDidMount() {
-    // const hardCodedData = [
-    //   { id: 1, name: 'Cody' },
-    //   { id: 2, name: 'Ben' },
-    //   { id: 3, name: 'Bubba' }
-    // ];
-
     const puppyId = this.props.match.params.puppyId
+    console.log("this.props.match", this.props.match)
     this.props.getPuppy(puppyId);
   }
 
-  render () {
+  render() {
     return (
       <div>
-        <h2>PUPPY NAME GOES HERE</h2>
+        <h2>{this.props.chosenPuppy.name}</h2>
         <div>
-          <img src="http://placehold.it/400x400" />
+          <img src={this.props.chosenPuppy.image} />
         </div>
       </div>
     )
@@ -29,26 +24,14 @@ class SinglePuppy extends Component {
 /* ---------- CONTAINER -------- */
 
 import { connect } from 'react-redux';
-import { getPuppy } from '../redux/singlepuppy-actions';
+import { getPuppy } from '../redux/singlePuppy-actions';
 
 const mapStateToProps = (state) => {
-  return { allPuppies: state.allPuppies };
+  return {
+    chosenPuppy: state.chosenPuppy
+  };
 };
 
 const mapDispatchToProps = { getPuppy }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SinglePuppy);
-
-
-/*
-
-Approaches
-
-1) Do a props.match to the URL id param
-2) Search through all puppies for an ID that matches that
-3) mapStatetoProps
-
-1) Separate action creators file for single puppies and do the thunk in there
-
-
-*/

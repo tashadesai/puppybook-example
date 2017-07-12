@@ -10,13 +10,17 @@ import AllPuppies from './components/AllPuppies'
 import SinglePuppy from './components/SinglePuppy'
 
 ReactDOM.render(
-  <Provider store={store}>
+  (<Provider store={store}>
     <BrowserRouter>
-      <Switch>
-        <Route path="/allPuppies/:puppyId" component={SinglePuppy} />
-        <Route path="/allPuppies" component={AllPuppies} />
-      </Switch>
+      <div className="container flexbox-container">
+        <div className="jumbotron">
+          <Switch>
+            <Route exact path="/" component={AllPuppies} />
+            <Route path="/puppies/:puppyId" component={SinglePuppy} />
+          </Switch>
+        </div>
+      </div>
     </BrowserRouter>
-  </Provider >,
+  </Provider >),
   document.getElementById('app')
 )

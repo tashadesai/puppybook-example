@@ -1,13 +1,14 @@
-'use strict';
+'use strict'
 
-const express = require('express');
-const volleyball = require('volleyball');
+const express = require('express')
+    , volleyball = require('volleyball')
+    , path = require('path')
 
-const app = express();
+const app = express()
 
-app.use(volleyball);
+app.use(volleyball)
 
-app.use(express.static(__dirname));
+app.use(express.static(__dirname))
 
 const puppies = [{
   id: 1,
@@ -29,19 +30,23 @@ const puppies = [{
   id: 5,
   name: 'Pandora',
   image: 'http://4.bp.blogspot.com/-3JeIxWBU7bY/UKjIt8lVpCI/AAAAAAAABx8/YM8piSOwczs/s1600/Schipperke-Puppy.jpg'
-}];
+}]
 
 app.get('/api/puppies', function (req, res) {
-  res.json(puppies);
-});
+  res.json(puppies)
+})
 
 app.get('/api/puppies/:id', function (req, res) {
-  const aPuppy = puppies.find(p => p.id === Number(req.params.id));
-  if (!aPuppy) res.status(404).end();
-  else res.json(aPuppy);
-});
+  const aPuppy = puppies.find(p => p.id === Number(req.params.id))
+  if (!aPuppy) res.status(404).end()
+  else res.json(aPuppy)
+})
+
+// app.use('*', (req, res, next) =>
+//   res.sendFile(path.join(__dirname, 'index.html'))
+// );
 
 app.listen(3000, function () {
-  console.log('Server listening on port', 3000);
-});
+  console.log('Server listening on port', 3000)
+})
 

@@ -1,32 +1,27 @@
-import React from 'react';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 /* ---------- COMPONENT -------- */
 
 class AllPuppies extends React.Component {
 
   componentDidMount() {
-    // const hardCodedData = [
-    //   { id: 1, name: 'Cody' },
-    //   { id: 2, name: 'Ben' },
-    //   { id: 3, name: 'Bubba' }
-    // ];
-
-    this.props.getAllPuppies();
+    this.props.getAllPuppies()
   }
 
   render() {
     return (
-      <div className="container flexbox-container">
-        <div className="jumbotron">
-          <div>
-            <ul className="list-unstyled">
-              {
-                this.props.allPuppies && this.props.allPuppies.map(puppy => {
-                  return (<li key={puppy.id}><a href="#">{puppy.name}</a></li>);
-                })}
-            </ul>
-          </div>
-        </div>
+      <div>
+        <ul className="list-unstyled">
+          {
+            this.props.allPuppies && this.props.allPuppies.map(puppy => {
+              return (
+                <li key={puppy.id}>
+                  <Link to={`/puppies/${puppy.id}`}>{puppy.name}</Link>
+                </li>
+              )
+            })}
+        </ul>
       </div>
     )
   }
@@ -34,26 +29,26 @@ class AllPuppies extends React.Component {
 
 /* ---------- CONTAINER -------- */
 
-import { connect } from 'react-redux';
-import { getAllPuppies } from '../redux/action-creators';
+import { connect } from 'react-redux'
+import { getAllPuppies } from '../redux/allPuppies-actions'
 
 const mapStateToProps = (state) => {
-  return { allPuppies: state.allPuppies };
-};
+  return { allPuppies: state.allPuppies }
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {
     getAllPuppies: () => {
       dispatch(getAllPuppies())
     }
-  };
-};
+  }
+}
 
 /*
 aka SUUUPER-shorthand:
 
-const mapDispatchtoProps = {getAllPuppies}
+const mapDispatchtoProps = { getAllPuppies }
 
-          */
+*/
 
-export default connect(mapStateToProps, mapDispatchToProps)(AllPuppies);
+export default connect(mapStateToProps, mapDispatchToProps)(AllPuppies)
