@@ -32,7 +32,7 @@ const puppies = [{
 }];
 
 app.get('/api/puppies', function (req, res) {
-  res.json(puppies.map(({id, name}) => ({id, name})));
+  res.json(puppies);
 });
 
 app.get('/api/puppies/:id', function (req, res) {
