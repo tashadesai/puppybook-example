@@ -1,18 +1,22 @@
-'use strict';
+'use strict'
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import AllPuppiesContainer from './AllPuppiesContainer';
-import { Provider } from 'react-redux';
-import store from './store';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import store from './store'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+
+import AllPuppies from './components/AllPuppies'
+import SinglePuppy from './components/SinglePuppy'
 
 ReactDOM.render(
-  <Provider store={store} >
-    <div className="container flexbox-container">
-      <div className="jumbotron">
-        <AllPuppiesContainer />
-      </div>
-    </div>
-  </Provider>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/allPuppies/:puppyId" component={SinglePuppy} />
+        <Route path="/allPuppies" component={AllPuppies} />
+      </Switch>
+    </BrowserRouter>
+  </Provider >,
   document.getElementById('app')
-);
+)
