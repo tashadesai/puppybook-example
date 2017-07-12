@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AllPuppies from './AllPuppies';
+import AllPuppies from './components/AllPuppies';
 import { Provider } from 'react-redux';
 import store from './store';
 

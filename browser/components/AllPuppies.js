@@ -31,7 +31,7 @@ class AllPuppies extends Component {
 /* ---------- CONTAINER ---------- */
 
 import { connect } from 'react-redux'
-import { getPuppies } from '../redux/action-creators'
+import { getPuppies } from '../redux/reducer'
 
 const mapStateToProps = (state) => {
   return {
