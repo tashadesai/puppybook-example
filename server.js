@@ -42,6 +42,7 @@ app.get('/api/puppies/:id', function (req, res) {
   else res.json(aPuppy)
 })
 
+//This makes routing to single puppies possible!
 app.use('*', (req, res, next) => {
   res.sendFile(path.join(__dirname, 'index.html'))
 })
