@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 /* ----- COMPONENT ---- */
 
@@ -8,7 +8,7 @@ class SinglePuppy extends Component {
     //Note this check in the componentDidMount. Ask yourself: Why is it used here? Hint: When is it important for the SinglePuppy component to run getPuppy, and when it is not?
     if (!this.props.chosenPuppy.keys) {
       const puppyId = this.props.match.params.puppyId
-      this.props.getPuppy(puppyId);
+      this.props.getPuppy(puppyId)
     }
   }
 
@@ -25,11 +25,11 @@ class SinglePuppy extends Component {
 }
 /* ---------- CONTAINER -------- */
 
-import { connect } from 'react-redux';
-import { getPuppy } from '../redux/singlePuppy-actions';
+import { connect } from 'react-redux'
+import { getPuppy } from '../redux/singlePuppy-actions'
 
 const mapStateToProps = (state) => ({ chosenPuppy: state.chosenPuppy })
 
 const mapDispatchToProps = { getPuppy }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SinglePuppy);
+export default connect(mapStateToProps, mapDispatchToProps)(SinglePuppy)

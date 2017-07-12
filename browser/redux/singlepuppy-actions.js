@@ -1,15 +1,13 @@
 /* ----- ACTIONS ----- */
 
-export const GET_A_PUPPY = 'GET_A_PUPPY';
+export const GET_A_PUPPY = 'GET_A_PUPPY'
 
 /* ----- ACTION CREATORS ----- */
 
-export const selectPuppy = puppy => {
-  return {
-    type: GET_A_PUPPY,
-    chosenPuppy: puppy
-  };
-};
+export const selectPuppy = puppy => ({
+  type: GET_A_PUPPY,
+  chosenPuppy: puppy
+})
 
 /* ----- THUNKS ----- */
 

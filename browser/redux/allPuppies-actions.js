@@ -1,15 +1,13 @@
 /* ----- ACTIONS ----- */
 
-export const GET_PUPPIES = 'GET_PUPPIES';
+export const GET_PUPPIES = 'GET_PUPPIES'
 
 /* ----- ACTION CREATORS ----- */
 
-export const getPuppies = puppies => {
-  return {
-    type: GET_PUPPIES,
-    allPuppies: puppies
-  };
-};
+export const getPuppies = puppies => ({
+  type: GET_PUPPIES,
+  allPuppies: puppies
+})
 
 /* ----- THUNKS ----- */
 
