@@ -10,6 +10,12 @@ Specifically, please note:
 * The Link in AllPuppies, with an onClick that adds the chosen puppy to the redux store
 * The componentDidMount in the SinglePuppy component, which now checks to see whether there is a chosenPuppy set in the store before getting a puppy
 
+## Installation
+
+1. ```git clone ``` this repo onto your machine
+2. Once in the directory, run ```npm install```
+3. Once installed, run ```npm start```. Puppybook will appear in your browser at ```http://localhost:3000/```.
+
 ## Additional Prep
 
 We encourage you to do the Puppybook workshop without referencing this solution. Outside of that, additional things you could do to prepare for the upcoming checkpoint:
