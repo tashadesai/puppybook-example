@@ -1,35 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-/* ----- COMPONENT ---- */
+export default class SinglePuppy extends Component {
 
-class SinglePuppy extends Component {
-
-  componentDidMount() {
-    //Note this check in the componentDidMount. Ask yourself: Why is it used here? Hint: When is it important for the SinglePuppy component to run getPuppy, and when it is not?
-    if (!this.props.chosenPuppy.keys) {
-      const puppyId = this.props.match.params.puppyId
-      this.props.getPuppy(puppyId)
-    }
-  }
-
-  render() {
+  render () {
     return (
       <div>
-        <h2>{this.props.chosenPuppy.name}</h2>
+        <h2>PUPPY NAME GOES HERE</h2>
         <div>
-          <img src={this.props.chosenPuppy.image} />
+          <img src="http://placehold.it/400x400" />
         </div>
       </div>
     )
   }
 }
-/* ---------- CONTAINER -------- */
-
-import { connect } from 'react-redux'
-import { getPuppy } from '../redux/singlePuppy-actions'
-
-const mapStateToProps = (state) => ({ chosenPuppy: state.chosenPuppy })
-
-const mapDispatchToProps = { getPuppy }
-
-export default connect(mapStateToProps, mapDispatchToProps)(SinglePuppy)
