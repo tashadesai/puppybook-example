@@ -1,8 +1,10 @@
 # Puppybook: A Fellow-led Review
 
-This repo finishes Puppybook, including a lot of code that we didn't get to in our live session.
+This repo finishes Puppybook, including a lot of code that we didn't get to in our live sessions.
 
-Specifically, please note:
+## Notes following Day 2
+
+In our live session we started writing the front-end router and the SinglePuppy component, but didn't finish. In this repo you'll find it all finished. Specifically, please note:
 
 * The finished front-end router in index.js
 * The new ```GET_A_PUPPY``` case in the reducer
@@ -24,4 +26,4 @@ We encourage you to do the Puppybook workshop without referencing this solution.
 
 * This solution makes extensive use of the react-redux library. **How could we do this without it?** Put yourself through this exercise to test your understanding of redux.
 
-Delivered with <3 to 1706-FSA-NY by [Natasha Desai](https://github.com/tashadesai/), [Gabriel Rowe](https://github.com/gabrielwr), [Emily Tseng](https://github.com/emtseng) and [Ben McCain](https://github.com/benjmac) @ [Fullstack Academy](https://github.com/FullstackAcademy/).
+Delivered with <3 to 1706-FSA-NY by [Natasha Desai](https://github.com/tashadesai/), [Gabriel Rowe](https://github.com/gabrielwr), [Emily Tseng](https://github.com/emtseng), [Ben McCain](https://github.com/benjmac) and [Sam Bakkila](https://github.com/sbakkila) @ [Fullstack Academy](https://github.com/FullstackAcademy/).
