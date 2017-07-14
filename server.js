@@ -33,8 +33,8 @@ const puppies = [{
 }]
 
 app.get('/api/puppies', function (req, res) {
-  res.json(puppies)
-})
+  res.json(puppies);
+});
 
 app.get('/api/puppies/:id', function (req, res) {
   const aPuppy = puppies.find(p => p.id === Number(req.params.id))

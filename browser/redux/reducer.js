@@ -4,6 +4,7 @@ import { GET_A_PUPPY } from './singlePuppy-actions'
 const initialState = {
   allPuppies: [],
   chosenPuppy: {}
+
 }
 
 export const reducer = (state = initialState, action) => {
@@ -15,6 +16,7 @@ export const reducer = (state = initialState, action) => {
     case GET_A_PUPPY:
       newObject.chosenPuppy = action.chosenPuppy
       break
+
     default:
       return state
   }
