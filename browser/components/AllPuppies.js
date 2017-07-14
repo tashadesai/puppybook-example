@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 /* ---------- COMPONENT -------- */
 
-class AllPuppies extends React.Component {
+export class AllPuppies extends React.Component {
 
   //Bonus: How could we "fill the store" with puppies WITHOUT using a componentDidMount on this component? Where else could we call getPuppies()?
   componentDidMount() {
@@ -22,7 +22,7 @@ class AllPuppies extends React.Component {
                     to={`/${puppy.id}`}
                     onClick={() => this.props.getPuppy(puppy.id)}
                   >
-                    {puppy.name}
+                    <h1>{puppy.name}</h1>
                   </Link>
                 </li>
               )
